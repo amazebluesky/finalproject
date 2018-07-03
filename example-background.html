@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <head>
+        <style>
+            body {
+                background-image: url("http://web.ncku.edu.tw/ezfiles/0/1000/img/1215/ncku-logo1.jpg");
+                background-repeat: no-repeat;
+                background-color: lightblue;
+                background-position: right top;
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../menu.html">Web learning</a>
+        <a class="nav-item nav-link active" href="week5menu.html">lecture5-css2</a>
+        </nav>
+        <h1>Hello World!</h1>
+        <select id="select-repeat">
+            <option value="no-repeat">no-repeat</option>
+            <option value="repeat-x">repeat-x</option>
+            <option value="repeat-y">repeat-y</option>
+        </select>
+        <select id="select-attachment">
+            <option value="fixed">fixed</option>
+            <option value="local">local</option>
+            <option value="scroll">scroll</option>
+        </select>
+        <select id="select-position">
+            <option value="center center">center center</option>
+            <option value="left bottom">left bottom</option>
+            <option value="left top">left top</option>
+            <option value="right bottom">right bottom</option>
+        </select>
+        
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+        <p>W3Schools background no-repeat, set position example.</p>
+        <p>Now the background image is only shown once, and positioned away from the text.</p>
+        <p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+
+
+        <script>
+            document.getElementById("select-repeat").addEventListener("change", event => {
+                document.body.style.backgroundRepeat = event.target.value;
+            })
+            document.getElementById("select-attachment").addEventListener("change", event => {
+                document.body.style.backgroundAttachment = event.target.value;
+            })
+            document.getElementById("select-position").addEventListener("change", event => {
+                document.body.style.backgroundPosition = event.target.value;
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <head>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../menu.html">Web learning</a>
+        <a class="nav-item nav-link active" href="week8menu.html">lecture8-js2</a>
+        </nav>
+        <h1>Cookies</h1>
+        <p>
+            <h3>Set Cookies</h3>
+            <input type="text" id="cookie-input" list="history-data" placeholder="Enter">
+            <datalist id="history-data"></datalist>
+        </p>
+        <p>
+            <input type="button" id="delete-cookie" value="delete cookie">
+        </p>
+        <script>
+            function setCookie(name, value, times, deleteFlag) {
+                console.log(name, value, times);
+                var date = new Date();
+                date.setTime(date.getTime() + (times*24*60*60*1000));
+                var expires = date.toGMTString();
+
+                if (!deleteFlag){
+                    var oriValue = getCookie("history");
+                    oriValue.push(value);
+                    value = oriValue.toString();
+                }
+
+                document.cookie = `${name}=${value};expires=${expires};path=/`;
+                console.log("cookies: ", document.cookie);
+            }
+
+            function getCookie(name) {
+                name += "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var elements = decodedCookie.split(';');
+                for(var i = 0; i < elements.length; i++) {
+                    var block = elements[i];
+                    while (block.charAt(0) == ' ') {
+                        block = block.substring(1);
+                    }
+                    if (block.indexOf(name) == 0) {
+                        var value = block.substring(name.length, block.length);
+                        if (value.length == 0) {
+                            return [];
+                        }
+                        return value.split(",");
+                    }
+                }
+                return [];
+            }
+
+            function deleteCookie(name) {
+                setCookie("history", "", 30, true);
+            }
+
+            function changeInput(event) {
+                setCookie("history", event.target.value, 30, false);
+            }
+
+            function doDeleteCookie(event) {
+                deleteCookie("history");
+            }
+
+            function doAppendHistory(event) {
+                var data = document.querySelector("#history-data");
+                data.innerHTML = "";
+
+                var historys = getCookie("history");
+                if (history.length == 0) {
+                    return;
+                }
+
+                for (let i = 0; i < historys.length; i++) {
+                    var option = document.createElement("option");
+                    option.textContent = historys[i];
+                    data.appendChild(option);
+                }
+            }
+
+            var input = document.querySelector("#cookie-input");
+            var deleteAll = document.querySelector("#delete-cookie");
+            input.addEventListener("change", changeInput);
+            input.addEventListener("click", doAppendHistory);
+            deleteAll.addEventListener("click", doDeleteCookie);
+        </script>
+    </body>
+</html>

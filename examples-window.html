@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <head></head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../menu.html">Web learning</a>
+        <a class="nav-item nav-link active" href="week8menu.html">lecture8-js2</a>
+        </nav>
+        <p>
+            <button id="button-alert">alert</button>
+        </p>
+        <p>
+            <button id="button-confirm">confirm</button>
+            <h1 id="confirmH1"></h1>
+        </p>
+        <p>
+            <button id="button-prompt">prompt</button>
+            <h1 id="promptH1"></h1>
+        </p>
+        <script>
+            var alertButton = document.getElementById("button-alert");
+            var confirmButton = document.getElementById("button-confirm");
+            var promptButton = document.getElementById("button-prompt");
+            alertButton.addEventListener("click", event => {
+                window.alert("You click the alert button");
+            });
+
+            confirmButton.addEventListener("click", event => {
+                var result = window.confirm("You click the confirm button");
+                document.getElementById("confirmH1").innerHTML = result ? "click Yes" : "click No";
+            });
+
+            promptButton.addEventListener("click", event => {
+                var result = window.prompt("You click the prompt button");
+                document.getElementById("promptH1").innerHTML = `input: ${result}`;
+            });
+        </script>
+    </body>
+</html>
